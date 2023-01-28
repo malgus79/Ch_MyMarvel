@@ -14,6 +14,6 @@ interface ApiService {
         @Query("apikey") apikey: String = API_KEY,
         @Query("ts") ts: String = timestamp,
         @Query("hash") hash: String = hash(),
-        @Query("offset") offset: String
+        //@Query("offset") offset: String
     ): CharacterDTO
 }
