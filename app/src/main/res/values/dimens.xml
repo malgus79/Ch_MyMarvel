@@ -1,4 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <dimen name="common_margin_max">64dp</dimen>
+    <dimen name="common_corner_default">16dp</dimen>
+    <dimen name="common_margin_item_movie">4dp</dimen>
 </resources>
