@@ -35,7 +35,6 @@ class HomeFragment : Fragment() {
     ): View {
         binding = FragmentHomeBinding.inflate(inflater, container, false)
 
-        homeAdapter = HomeAdapter()
         setupCharacterList()
 
         return binding.root
@@ -45,11 +44,9 @@ class HomeFragment : Fragment() {
         viewModel.getAllCharactersData().observe(viewLifecycleOwner) {
             when (it) {
                 is Resource.Loading -> {
-                    Log.d("STATUSSS", "Loading")
                     binding.progressBar.show()
                 }
                 is Resource.Success -> {
-                    Log.d("STATUSSS", "OK")
                     binding.progressBar.hide()
                     if (it.data.isEmpty()) {
                         binding.rvCharacterList.hide()
@@ -61,7 +58,6 @@ class HomeFragment : Fragment() {
                 is Resource.Failure -> {
                     binding.progressBar.hide()
                     showToast(getString(R.string.error_detail) + it.exception)
-                    Log.d("STATUSSS", "${it.exception}")
                 }
             }
         }

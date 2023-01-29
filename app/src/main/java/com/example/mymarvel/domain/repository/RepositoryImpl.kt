@@ -7,7 +7,8 @@ import com.example.mymarvel.model.paging.DataPagingSource
 import com.example.mymarvel.model.remote.RemoteDataSource
 import javax.inject.Inject
 
-class RepositoryImpl @Inject constructor(private val remoteDataSource: RemoteDataSource) {
+class RepositoryImpl @Inject constructor(private val remoteDataSource: RemoteDataSource) :
+    InterfaceRepository {
 
     val listDataRepository = Pager(
         config = PagingConfig(1),
@@ -15,7 +16,7 @@ class RepositoryImpl @Inject constructor(private val remoteDataSource: RemoteDat
         DataPagingSource(repository = RepositoryImpl(remoteDataSource))
     }.flow
 
-    suspend fun getAllCharacters(offset: Int): List<CharacterModel> {
+    override suspend fun getAllCharacters(offset: Int): List<CharacterModel> {
         return remoteDataSource.getAllCharacters(offset).data.results.map {
             it.toCharacter()
         }
