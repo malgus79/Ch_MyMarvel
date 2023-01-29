@@ -1,6 +1,6 @@
 package com.example.mymarvel.di
 
-import com.example.mymarvel.core.Constants.BASE_URL
+import com.example.mymarvel.core.common.Constants.BASE_URL
 import com.example.mymarvel.model.remote.ApiService
 import dagger.Module
 import dagger.Provides

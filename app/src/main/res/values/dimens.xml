@@ -3,4 +3,8 @@
     <dimen name="common_margin_max">64dp</dimen>
     <dimen name="common_corner_default">16dp</dimen>
     <dimen name="common_margin_item_movie">4dp</dimen>
+    <dimen name="error_image_size">50dp</dimen>
+    <dimen name="text_size_normal">20sp</dimen>
+    <dimen name="common_margin_default">16dp</dimen>
+    <dimen name="common_margin_min">8dp</dimen>
 </resources>

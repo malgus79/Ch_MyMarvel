@@ -8,40 +8,47 @@ import com.bumptech.glide.Glide
 import com.bumptech.glide.load.engine.DiskCacheStrategy
 import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions
 import com.example.mymarvel.R
-import com.example.mymarvel.core.BaseViewHolder
 import com.example.mymarvel.databinding.ItemCharacterBinding
-import com.example.mymarvel.model.data.Result
+import com.example.mymarvel.domain.model.CharacterModel
 
 class HomeAdapter(
-    private val context: Context
-): RecyclerView.Adapter<BaseViewHolder<*>>() {
+    private val context: Context,
+    var itemList: ArrayList<CharacterModel>
+) : RecyclerView.Adapter<HomeAdapter.HomeViewHolder>() {
 
-    private var characterList = listOf<Result>()
+    //private var characterList = ArrayList<CharacterModel>()
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BaseViewHolder<*> {
+    fun setCharacterList(characterList: ArrayList<CharacterModel>) {
+        this.itemList.addAll(characterList)
+        notifyDataSetChanged()
+    }
+
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): HomeViewHolder {
         val itemBinding = ItemCharacterBinding.inflate(LayoutInflater.from(context), parent, false)
         return HomeViewHolder(itemBinding)
     }
 
-    override fun getItemCount(): Int = characterList.size
+    override fun getItemCount(): Int = itemList.size
 
-    override fun onBindViewHolder(holder: BaseViewHolder<*>, position: Int) {
-        when(holder) {
-            is HomeViewHolder -> holder.bind(characterList[position], position)
-        }
+    override fun onBindViewHolder(holder: HomeViewHolder, position: Int) {
+        holder.bind(itemList[position], position)
     }
 
-    private inner class HomeViewHolder(private val binding: ItemCharacterBinding) :
-        BaseViewHolder<Result>(binding.root) {
+    inner class HomeViewHolder(private val binding: ItemCharacterBinding) :
+        RecyclerView.ViewHolder(binding.root) {
+        fun bind(item: CharacterModel, position: Int) = with(binding) {
+            val list = itemList[position]
+            binding.txtCharacterName.text = list.name
+            val imageUrl =
+                "${list.thumbnail.replace("http", "https")}/portrait_xlarge.${list.thumbnailExt}"
 
-        override fun bind(item: Result, position: Int) = with(binding) {
             Glide.with(context)
-                .load(item)
+                .load(imageUrl)
                 .transition(DrawableTransitionOptions.withCrossFade())
                 .diskCacheStrategy(DiskCacheStrategy.ALL)
                 .error(R.drawable.gradient)
                 .centerCrop()
-                .into(imgCharacter)
+                .into(binding.imgCharacter)
 
             txtCharacterName.text = item.name
         }

@@ -1,5 +1,7 @@
 package com.example.mymarvel.model.data
 
+import com.example.mymarvel.domain.model.CharacterModel
+
 data class Result(
     val comics: Comics,
     val description: String,
@@ -11,5 +13,20 @@ data class Result(
     val series: Series,
     val stories: Stories,
     val thumbnail: Thumbnail,
+    val thumbnailExt: String,
     val urls: List<Url>
-)
+) {
+    fun toCharacter(): CharacterModel {
+        return CharacterModel(
+            id = id,
+            name = name,
+            description = description,
+            thumbnail = thumbnail.path,
+            thumbnailExt = thumbnail.extension,
+            comics = comics.items.map {
+                it.name
+            }
+        )
+    }
+
+}
