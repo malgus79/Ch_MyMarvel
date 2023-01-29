@@ -14,6 +14,7 @@ import com.example.mymarvel.R
 import com.example.mymarvel.core.Resource
 import com.example.mymarvel.core.common.hide
 import com.example.mymarvel.core.common.show
+import com.example.mymarvel.core.common.showToast
 import com.example.mymarvel.databinding.FragmentHomeBinding
 import com.example.mymarvel.ui.adapter.HomeAdapter
 import com.example.mymarvel.viewmodel.HomeViewModel
@@ -45,7 +46,6 @@ class HomeFragment : Fragment() {
             when (it) {
                 is Resource.Loading -> {
                     Log.d("STATUSSS", "Loading")
-                    binding.emptyContainer.root.hide()
                     binding.progressBar.show()
                 }
                 is Resource.Success -> {
@@ -53,7 +53,6 @@ class HomeFragment : Fragment() {
                     binding.progressBar.hide()
                     if (it.data.isEmpty()) {
                         binding.rvCharacterList.hide()
-                        binding.emptyContainer.root.show()
                         return@observe
                     }
                     setupRecyclerView()
@@ -61,7 +60,7 @@ class HomeFragment : Fragment() {
                 }
                 is Resource.Failure -> {
                     binding.progressBar.hide()
-
+                    showToast(getString(R.string.error_detail) + it.exception)
                     Log.d("STATUSSS", "${it.exception}")
                 }
             }

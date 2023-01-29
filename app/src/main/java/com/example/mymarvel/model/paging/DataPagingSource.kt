@@ -21,8 +21,7 @@ class DataPagingSource(private val repository: RepositoryImpl) : PagingSource<In
             val currentPage = params.key ?: PAGE_INDEX
             val response = repository.getAllCharacters(currentPage)
             val responseData = mutableListOf<CharacterModel>()
-            val data = response
-            responseData.addAll(data)
+            responseData.addAll(response)
 
             LoadResult.Page(
                 data = responseData,
