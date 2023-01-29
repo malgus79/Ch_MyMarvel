@@ -1,4 +1,4 @@
-package com.example.mymarvel.ui
+package com.example.mymarvel.ui.fragment
 
 import android.os.Bundle
 import android.util.Log

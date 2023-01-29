@@ -2,6 +2,7 @@ package com.example.mymarvel.model.paging
 
 import androidx.paging.PagingSource
 import androidx.paging.PagingState
+import com.example.mymarvel.core.common.Constants.LIMIT
 import com.example.mymarvel.core.common.Constants.PAGE_INDEX
 import com.example.mymarvel.domain.model.CharacterModel
 import com.example.mymarvel.domain.repository.RepositoryImpl
@@ -26,7 +27,7 @@ class DataPagingSource(private val repository: RepositoryImpl) : PagingSource<In
             LoadResult.Page(
                 data = responseData,
                 prevKey = if (currentPage == PAGE_INDEX) null else -1,
-                nextKey = currentPage.plus(20)
+                nextKey = currentPage.plus(LIMIT)
                 //nextKey = if (responseData.isEmpty()) null else currentPage + 1
             )
         } catch (e: IOException) {
