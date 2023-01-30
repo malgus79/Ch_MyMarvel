@@ -2,6 +2,7 @@ package com.example.mymarvel.ui.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.navigation.findNavController
 import androidx.paging.PagingDataAdapter
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
@@ -11,6 +12,7 @@ import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions
 import com.example.mymarvel.R
 import com.example.mymarvel.databinding.ItemCharacterBinding
 import com.example.mymarvel.domain.model.CharacterModel
+import com.example.mymarvel.ui.fragment.HomeFragmentDirections
 
 class HomeAdapter : PagingDataAdapter<CharacterModel, HomeAdapter.HomeViewHolder>(diffCallback) {
 
@@ -39,6 +41,8 @@ class HomeAdapter : PagingDataAdapter<CharacterModel, HomeAdapter.HomeViewHolder
     }
 
     override fun onBindViewHolder(holder: HomeViewHolder, position: Int) {
+        val currentCharacter = getItem(position)
+
         holder.binding.apply {
             holder.itemView.apply {
 
@@ -55,6 +59,13 @@ class HomeAdapter : PagingDataAdapter<CharacterModel, HomeAdapter.HomeViewHolder
                     .into(imgCharacter)
 
                 txtCharacterName.text = list?.name
+
+                setOnClickListener {
+                    val action = HomeFragmentDirections.actionHomeFragmentToCharacterFragment(
+                        currentCharacter!!
+                    )
+                    this.findNavController().navigate(action)
+                }
             }
         }
     }

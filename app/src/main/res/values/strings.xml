@@ -6,4 +6,5 @@
     <string name="search_no_results">No character found</string>
     <string name="error_detail">An error occurred while obtaining the information</string>
     <string name="img_app_bar">Character image detail</string>
+    <string name="character_detail">Character details</string>
 </resources>

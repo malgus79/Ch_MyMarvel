@@ -21,6 +21,10 @@
     <fragment
         android:id="@+id/characterFragment"
         android:name="com.example.mymarvel.ui.fragment.CharacterFragment"
-        android:label="fragment_character"
-        tools:layout="@layout/fragment_character" />
+        android:label="@string/character_detail"
+        tools:layout="@layout/fragment_character" >
+        <argument
+            android:name="character_model"
+            app:argType="com.example.mymarvel.domain.model.CharacterModel" />
+    </fragment>
 </navigation>
