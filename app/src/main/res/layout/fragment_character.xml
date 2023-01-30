@@ -114,6 +114,36 @@
                         android:textColor="@color/red_theme"
                         tools:text="Comic" />
 
+                    <TextView
+                        android:id="@+id/txt_character_event"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="3dp"
+                        android:layout_marginBottom="3dp"
+                        android:textColor="@color/red_theme"
+                        tools:text="Comic" />
+
+                    <TextView
+                        android:id="@+id/txt_character_stories"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="3dp"
+                        android:layout_marginBottom="3dp"
+                        android:textColor="@color/red_theme"
+                        tools:text="Comic" />
+
+                    <TextView
+                        android:id="@+id/txt_character_urls"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="3dp"
+                        android:layout_marginBottom="3dp"
+                        android:textColor="@color/red_theme"
+                        tools:text="Comic" />
+
                 </LinearLayout>
 
             </ScrollView>

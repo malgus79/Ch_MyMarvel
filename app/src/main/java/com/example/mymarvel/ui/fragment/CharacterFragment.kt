@@ -46,7 +46,7 @@ class CharacterFragment : Fragment() {
         with (binding) {
             txtCharacterName.text = character.name
             txtCharacterDescription.text = character.description
-            txtCharacterComic.text= character.comics.toString()
+            //txtCharacterComic.text= character.comics.toString()
         }
     }
 }

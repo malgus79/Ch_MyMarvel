@@ -10,5 +10,5 @@ data class CharacterModel(
     val description:String,
     val thumbnail: String,
     val thumbnailExt: String,
-    val comics: List<String>
+//    val comics: List<String>
 ): Parcelable

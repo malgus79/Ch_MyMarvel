@@ -1,6 +1,8 @@
 package com.example.mymarvel.model.data
 
 import com.example.mymarvel.domain.model.CharacterModel
+import com.example.mymarvel.model.local.CharacterModelEntity
+import kotlin.Result
 
 data class Result(
     val comics: Comics,
@@ -23,9 +25,9 @@ data class Result(
             description = description,
             thumbnail = thumbnail.path,
             thumbnailExt = thumbnail.extension,
-            comics = comics.items.map {
-                it.name
-            }
+//            comics = comics.items.map {
+//                it.name
+//            }
         )
     }
 

@@ -18,4 +18,6 @@ object Constants {
 
     const val PAGE_INDEX = 1
     const val LIMIT = 20
+
+    const val MARVEL_DATABASE = "marvel_database"
 }
