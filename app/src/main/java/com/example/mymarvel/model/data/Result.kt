@@ -1,8 +1,6 @@
 package com.example.mymarvel.model.data
 
 import com.example.mymarvel.domain.model.CharacterModel
-import com.example.mymarvel.model.local.CharacterModelEntity
-import kotlin.Result
 
 data class Result(
     val comics: Comics,

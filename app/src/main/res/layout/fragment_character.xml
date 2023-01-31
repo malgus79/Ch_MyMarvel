@@ -40,7 +40,7 @@
             <ImageView
                 android:id="@+id/img_app_bar"
                 android:layout_width="match_parent"
-                android:layout_height="400dp"
+                android:layout_height="550dp"
                 android:contentDescription="@string/img_app_bar"
                 android:scaleType="centerCrop"
                 android:src="@mipmap/ic_launcher"
@@ -85,7 +85,7 @@
                         android:id="@+id/txt_character_name"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="10dp"
+                        android:layout_marginHorizontal="@dimen/common_margin_min"
                         android:ellipsize="end"
                         android:gravity="center"
                         android:maxLines="2"
@@ -98,7 +98,7 @@
                         android:id="@+id/txt_character_description"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="10dp"
+                        android:layout_marginHorizontal="@dimen/common_margin_min"
                         android:layout_marginTop="3dp"
                         android:layout_marginBottom="3dp"
                         android:textColor="@color/black"
@@ -108,7 +108,7 @@
                         android:id="@+id/txt_character_comic"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="10dp"
+                        android:layout_marginHorizontal="@dimen/common_margin_min"
                         android:layout_marginTop="3dp"
                         android:layout_marginBottom="3dp"
                         android:textColor="@color/red_theme"
@@ -118,31 +118,31 @@
                         android:id="@+id/txt_character_event"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="10dp"
+                        android:layout_marginHorizontal="@dimen/common_margin_min"
                         android:layout_marginTop="3dp"
                         android:layout_marginBottom="3dp"
                         android:textColor="@color/red_theme"
-                        tools:text="Comic" />
+                        tools:text="Event" />
 
                     <TextView
                         android:id="@+id/txt_character_stories"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="10dp"
+                        android:layout_marginHorizontal="@dimen/common_margin_min"
                         android:layout_marginTop="3dp"
                         android:layout_marginBottom="3dp"
                         android:textColor="@color/red_theme"
-                        tools:text="Comic" />
+                        tools:text="Stories" />
 
                     <TextView
                         android:id="@+id/txt_character_urls"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="10dp"
+                        android:layout_marginHorizontal="@dimen/common_margin_min"
                         android:layout_marginTop="3dp"
                         android:layout_marginBottom="3dp"
                         android:textColor="@color/red_theme"
-                        tools:text="Comic" />
+                        tools:text="Urls" />
 
                 </LinearLayout>
 
